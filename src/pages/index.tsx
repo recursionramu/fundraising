@@ -1,17 +1,18 @@
+import type { NextPage } from 'next';
 import Navbar from "../Components/Navbar";
 import Herosection from "../Components/Herosection";
 import FeaturedCampaigns from "../Components/FeaturedCampaigns";
 import Footer from "../Components/Footer";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
-    <div>
+    <main className="min-h-screen flex flex-col">
       <Navbar />
       <Herosection />
-      <FeaturedCampaigns/>
+      <FeaturedCampaigns />
       <Footer />
-      
-
-    </div>
+    </main>
   );
 }
+
+export default Home;
