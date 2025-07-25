@@ -73,7 +73,7 @@ const testimonials = [
 
 const Home: NextPage = () => {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col bg-white">
       <Navbar />
       <Herosection />
       <FeaturedCampaigns/>
