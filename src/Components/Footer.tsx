@@ -5,7 +5,7 @@ import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-800 px-6 py-8 border-t">
+    <footer className="bg-white text-gray-800 px-6 py-8 pt-16 pb-16 border-t">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-8">
         {/* Contact Section */}
         <div>

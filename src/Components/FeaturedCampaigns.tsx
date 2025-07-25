@@ -57,7 +57,7 @@ const campaigns = [
 
 const FeaturedCampaigns = () => {
 	return (
-		<section className="pt-0 px-4 bg-white">
+		<section className="pt-20 pb-30 px-4 bg-white">
 			<h2 className="text-2xl font-bold text-blue-900 mb-8">
 				Featured Campaigns
 			</h2>
