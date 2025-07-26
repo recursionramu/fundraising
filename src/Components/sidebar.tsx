@@ -32,7 +32,7 @@ export const SidebarProvider = ({
   children,
   open: openProp,
   setOpen: setOpenProp,
-  animate = true,
+  animate = false,
 }: {
   children: React.ReactNode;
   open?: boolean;
