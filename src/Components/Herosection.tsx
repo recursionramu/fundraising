@@ -15,17 +15,12 @@ const HeroSection = () => {
       <div className="flex justify-center gap-4 flex-wrap">
         <Link href="/start">
           <button className="bg-blue-900 text-white px-6 py-2 rounded-lg font-medium">
-            Start a Campaign
+            Start a Fundraiser
           </button>
         </Link>
         <Link href="/campaigns">
           <button className="border border-blue-900 text-blue-900 px-6 py-2 rounded-lg font-medium">
-            View Campaigns
-          </button>
-        </Link>
-        <Link href="/donate">
-          <button className="bg-orange-500 text-white px-6 py-2 rounded-lg font-medium">
-            Donate
+            Browse Fundraisers
           </button>
         </Link>
       </div>

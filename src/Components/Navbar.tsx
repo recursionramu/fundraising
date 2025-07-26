@@ -166,6 +166,13 @@ const Navbar = () => {
       <MenuItem setActive={setActive} active={active} item="Sign Up">
         {/* Sign Up dropdown content */}
       </MenuItem>
+      <MenuItem setActive={setActive} active={active} item="Admin">
+       <div style={{ cursor: 'pointer' }}>Super Admin</div>
+       <div style={{ cursor: 'pointer' }}>General Admin</div>
+       <div style={{ cursor: 'pointer' }}>Donation and Tax Management</div>
+
+       </MenuItem>
+      
     </Menu>
   );
 };
