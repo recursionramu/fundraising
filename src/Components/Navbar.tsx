@@ -154,10 +154,10 @@ const Navbar = () => {
       <MenuItem setActive={setActive} active={active} item="Home">
         {/* Home dropdown content */}
       </MenuItem>
-      <MenuItem setActive={setActive} active={active} item="Donate">
+      <MenuItem setActive={setActive} active={active} item="Start a Fundraiser">
         {/* Donate dropdown content */}
       </MenuItem>
-      <MenuItem setActive={setActive} active={active} item="Campaign">
+      <MenuItem setActive={setActive} active={active} item="Browse Fundraisers">
         {/* Campaign dropdown content */}
       </MenuItem>
       <MenuItem setActive={setActive} active={active} item="Login">
