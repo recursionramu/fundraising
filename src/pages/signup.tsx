@@ -21,7 +21,7 @@ export default function SignupFormDemo() {
         <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
           
         </h2>
-        <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
+        <p className="mt-2 max-w-sm text-lg font-bold text-neutral-600 dark:text-neutral-300">
          Sign Up Now
         </p>
 
