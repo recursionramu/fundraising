@@ -19,7 +19,7 @@ const logoutLink = {
 
 export default function MyPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-orange-300 to-white">
       
       <Sidebar>
         <SidebarBody className="justify-between gap-10 pb-180 pt-30">
