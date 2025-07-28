@@ -1,4 +1,4 @@
-// components/CampaignCard.tsx
+
 
 import React from "react";
 
