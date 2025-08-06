@@ -1,10 +1,10 @@
 
-import Sidebar, { SidebarBody, SidebarLink } from "../Components/sidebar";
+import Sidebar, { SidebarBody, SidebarLink } from "../../Components/sidebar";
 import { IconHome, IconUser, IconSettings, IconLogout,IconBellRingingFilled,IconCoinFilled} from "@tabler/icons-react";
-import Footer from "../Components/Footer";
+import Footer from "../../Components/Footer";
 
 const links = [
-  { label: "Home", href: "/", icon: <IconHome /> },
+  { label: "Overview", href: "/dashboard", icon: <IconHome /> },
   { label: "Profile", href: "/Profile", icon: <IconUser /> },
   { label: "Settings", href: "/Settings", icon: <IconSettings/> },
   { label: "Withdraw", href: "/Withdraw", icon: <IconCoinFilled /> },
@@ -24,6 +24,7 @@ export default function MyPage() {
       <Sidebar>
         <SidebarBody className="justify-between gap-10 pb-180 pt-30">
           {/* Main Navigation Links */}
+          
           <div className="flex flex-col gap-2">
             {links.map((link) => (
               <SidebarLink key={link.href} link={link} />
