@@ -2,18 +2,18 @@ import Sidebar, { SidebarBody, SidebarLink } from "../../Components/sidebar";
 import {
   IconHome,
   IconUser,
-  IconSettings,
   IconLogout,
   IconBellRingingFilled,
   IconCoinFilled,
   IconPlus,
+  IconTableDashed
 } from "@tabler/icons-react";
 import Footer from "../../Components/Footer";
 
 const links = [
   { label: "Overview", href: "/dashboard", icon: <IconHome /> },
   { label: "Profile", href: "/dashboard/profile", icon: <IconUser /> },
-  { label: "Settings", href: "/dashboard/settings", icon: <IconSettings /> },
+  { label: "Browse Fundraise", href: "/dashboard/browsefundraiser", icon: <IconTableDashed /> },
   { label: "Withdraw", href: "/dashboard/withdraw", icon: <IconCoinFilled /> },
   { label: "Messages", href: "/dashboard/messages", icon: <IconBellRingingFilled /> },
   { label: "Start Fundraiser", href: "/dashboard/start-fundraiser", icon: <IconPlus /> },

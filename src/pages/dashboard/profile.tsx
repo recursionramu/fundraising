@@ -120,7 +120,7 @@ const ProfilePage = () => {
                   <IconUser className="w-10 h-10 text-gray-950" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-950">John Doe</h2>
+                  <h2 className="text-xl font-bold text-gray-950">John Doe</h2>
                   <p className="text-gray-950">john.doe@example.com</p>
                 </div>
               </div>
@@ -129,7 +129,7 @@ const ProfilePage = () => {
                 {/* Name Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-950 mb-1">
+                    <label className="block text-sm font-bold text-gray-950 mb-1">
                       First Name
                     </label>
                     <input
@@ -139,7 +139,7 @@ const ProfilePage = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-950 mb-1">
+                    <label className="block text-sm font-bold text-gray-950 mb-1">
                       Last Name
                     </label>
                     <input
@@ -153,7 +153,7 @@ const ProfilePage = () => {
                 {/* Email and Phone with Country Code */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-950 mb-1">
+                    <label className="block text-sm font-bold text-gray-950 mb-1">
                       Email
                     </label>
                     <input
@@ -163,7 +163,7 @@ const ProfilePage = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-950 mb-1">
+                    <label className="block text-sm font-bold text-gray-950 mb-1">
                       Phone
                     </label>
                     <div className="flex">
@@ -196,7 +196,7 @@ const ProfilePage = () => {
 
                 {/* Address */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-950 mb-1">
+                  <label className="block text-sm font-bold text-gray-950 mb-1">
                     Address
                   </label>
                   <input
@@ -209,7 +209,7 @@ const ProfilePage = () => {
                 {/* Occupation & Education */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-950 mb-1">
+                    <label className="block text-sm font-bold text-gray-950 mb-1">
                       Occupation
                     </label>
                     <select
@@ -225,7 +225,7 @@ const ProfilePage = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-950 mb-1">
+                    <label className="block text-sm font-bold text-gray-950 mb-1">
                       Education
                     </label>
                     <input
@@ -238,7 +238,7 @@ const ProfilePage = () => {
 
                 {/* Bio */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-950 mb-1">
+                  <label className="block text-sm font-bold text-gray-950 mb-1">
                     Bio
                   </label>
                   <textarea
@@ -251,7 +251,7 @@ const ProfilePage = () => {
                 {/* Family Members Section */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <label className="block text-sm font-medium text-gray-950">
+                    <label className="block text-sm font-bold text-gray-950">
                       Family Members
                     </label>
                     <button
