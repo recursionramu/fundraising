@@ -90,7 +90,7 @@ const ProfilePage = () => {
     <div className="min-h-screen bg-gradient-to-br from-orange-300 to-white">
       {/* Flex container for sidebar and content */}
       <div className="flex min-h-screen">
-        {/* Sidebar with fixed width (ensure fixed width like 300px) */}
+        {/* Sidebar with fixed width */}
         <Sidebar className="w-[300px] shrink-0">
           <SidebarBody className="justify-between gap-10 pb-180 pt-30">
             <div className="flex flex-col gap-2">
@@ -106,22 +106,22 @@ const ProfilePage = () => {
 
         {/* Content area immediately next to sidebar */}
         <main
-          className="flex-grow p-8"
+          className="flex-grow pt-0 px-110 pb-8"
           style={{ minHeight: "100vh" }}
         >
-          {/* Added top margin to roughly align vertically near 'Profile' link */}
-          <div className="max-w-2xl w-full mt-24">
-            <h1 className="text-3xl font-bold text-gray-800 mb-6">Edit My Profile</h1>
+          {/* Removed mt-24 margin so card is at the very top */}
+          <div className="max-w-2xl w-full">
+            <h1 className="text-3xl font-bold text-gray-950 mb-6">Edit My Profile</h1>
 
             <div className="bg-white rounded-lg shadow-md pt-2 px-6 pb-6 space-y-8">
               {/* Profile Picture and Basic Info */}
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                  <IconUser className="w-10 h-10 text-gray-600" />
+                  <IconUser className="w-10 h-10 text-gray-950" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-800">John Doe</h2>
-                  <p className="text-gray-600">john.doe@example.com</p>
+                  <h2 className="text-xl font-semibold text-gray-950">John Doe</h2>
+                  <p className="text-gray-950">john.doe@example.com</p>
                 </div>
               </div>
 
@@ -129,23 +129,23 @@ const ProfilePage = () => {
                 {/* Name Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-gray-950 mb-1">
                       First Name
                     </label>
                     <input
                       type="text"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      defaultValue="John"
+                      defaultValue="Name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-gray-950 mb-1">
                       Last Name
                     </label>
                     <input
                       type="text"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      defaultValue="Doe"
+                      defaultValue="Last name"
                     />
                   </div>
                 </div>
@@ -153,7 +153,7 @@ const ProfilePage = () => {
                 {/* Email and Phone with Country Code */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-gray-950 mb-1">
                       Email
                     </label>
                     <input
@@ -163,7 +163,7 @@ const ProfilePage = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-gray-950 mb-1">
                       Phone
                     </label>
                     <div className="flex">
@@ -196,7 +196,7 @@ const ProfilePage = () => {
 
                 {/* Address */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-950 mb-1">
                     Address
                   </label>
                   <input
@@ -209,7 +209,7 @@ const ProfilePage = () => {
                 {/* Occupation & Education */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-gray-950 mb-1">
                       Occupation
                     </label>
                     <select
@@ -225,20 +225,20 @@ const ProfilePage = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-gray-950 mb-1">
                       Education
                     </label>
                     <input
                       type="text"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      placeholder="B.Tech in Computer Science"
+                      placeholder="College/University name"
                     />
                   </div>
                 </div>
 
                 {/* Bio */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-950 mb-1">
                     Bio
                   </label>
                   <textarea
@@ -251,7 +251,7 @@ const ProfilePage = () => {
                 {/* Family Members Section */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="block text-sm font-medium text-gray-950">
                       Family Members
                     </label>
                     <button
@@ -264,7 +264,7 @@ const ProfilePage = () => {
                   </div>
                   <div className="space-y-4">
                     {family.length === 0 && (
-                      <div className="text-gray-400 text-sm">
+                      <div className="text-gray-950 text-sm">
                         No family members added.
                       </div>
                     )}
@@ -291,7 +291,7 @@ const ProfilePage = () => {
                         <input
                           type="text"
                           placeholder="Name"
-                          className="border border-gray-300 rounded px-2 py-1 flex-1"
+                          className="border border-gray-950 rounded px-2 py-1 flex-1"
                           value={member.name}
                           onChange={(e) =>
                             handleMemberChange(idx, "name", e.target.value)

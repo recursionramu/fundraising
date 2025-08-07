@@ -35,3 +35,10 @@ body {
   animation: scroll var(--animation-duration, 20s) linear infinite;
   animation-direction: var(--animation-direction, forwards);
 }
+
+
+.placeholder-black-bold::placeholder {
+  color: black;
+  font-weight: 700; /* bold */
+  opacity: 1;       /* full opacity */
+}

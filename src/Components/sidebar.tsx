@@ -16,6 +16,15 @@ interface SidebarContextProps {
   animate: boolean;
 }
 
+// Add className here so SidebarProvider can receive it if needed
+interface SidebarProviderProps {
+  children: React.ReactNode;
+  open?: boolean;
+  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  animate?: boolean;
+  className?: string;
+}
+
 const SidebarContext = createContext<SidebarContextProps | undefined>(
   undefined
 );
@@ -33,88 +42,102 @@ export const SidebarProvider = ({
   open: openProp,
   setOpen: setOpenProp,
   animate = false,
-}: {
-  children: React.ReactNode;
-  open?: boolean;
-  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-  animate?: boolean;
-}) => {
+  className,
+}: SidebarProviderProps) => {
   const [openState, setOpenState] = useState(false);
 
   const open = openProp !== undefined ? openProp : openState;
   const setOpen = setOpenProp !== undefined ? setOpenProp : setOpenState;
 
   return (
-    <SidebarContext.Provider value={{ open, setOpen, animate: animate }}>
-      {children}
+    <SidebarContext.Provider value={{ open, setOpen, animate }}>
+      {/* Apply className to wrapping div if provided */}
+      <div className={className}>{children}</div>
     </SidebarContext.Provider>
   );
 };
+
+interface SidebarProps {
+  children: React.ReactNode;
+  open?: boolean;
+  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  animate?: boolean;
+  className?: string;
+}
 
 export const Sidebar = ({
   children,
   open,
   setOpen,
   animate,
-}: {
-  children: React.ReactNode;
-  open?: boolean;
-  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-  animate?: boolean;
-}) => {
+  className,
+}: SidebarProps) => {
   return (
-    <SidebarProvider open={open} setOpen={setOpen} animate={animate}>
+    <SidebarProvider open={open} setOpen={setOpen} animate={animate} className={className}>
       {children}
     </SidebarProvider>
   );
 };
 
-export const SidebarBody = (props: React.ComponentProps<typeof motion.div>) => {
+export const SidebarBody = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof motion.div> & { className?: string }) => {
+  // Pass className to DesktopSidebar and MobileSidebar
   return (
     <>
-      <DesktopSidebar {...props} />
-      <MobileSidebar {...(props as React.ComponentProps<"div">)} />
+      <DesktopSidebar className={className} {...props} />
+      <MobileSidebar className={className} {...(props as React.ComponentProps<"div">)} />
     </>
   );
 };
+
+interface DesktopSidebarProps extends React.ComponentProps<typeof motion.div> {
+  className?: string;
+  
+}
 
 export const DesktopSidebar = ({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof motion.div>) => {
+}: DesktopSidebarProps) => {
   const { open, setOpen, animate } = useSidebar();
   return (
-    <>
-      <motion.div
-        className={cn(
-          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-neutral-100 dark:bg-neutral-800 w-[300px] shrink-0",
-          className
-        )}
-        animate={{
-          width: animate ? (open ? "300px" : "60px") : "300px",
-        }}
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-        {...props}
-      >
-        {children}
-      </motion.div>
-    </>
+    <motion.div
+      className={cn(
+        "h-full px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 dark:bg-neutral-800 w-[300px] shrink-0",
+        className
+      )}
+      animate={{
+        width: animate ? (open ? "300px" : "60px") : "300px",
+      }}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      {...props}
+    >
+      {children}
+    </motion.div>
   );
 };
+
+interface MobileSidebarProps extends React.ComponentProps<"div"> {
+  className?: string;
+  children?: React.ReactNode;
+}
 
 export const MobileSidebar = ({
   className,
   children,
   ...props
-}: React.ComponentProps<"div">) => {
+}: MobileSidebarProps) => {
   const { open, setOpen } = useSidebar();
   return (
     <>
       <div
         className={cn(
-          "h-10 px-4 py-4 flex flex-row md:hidden  items-center justify-between bg-neutral-100 dark:bg-neutral-800 w-full"
+          "h-10 px-4 py-4 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-neutral-800 w-full",
+          className
         )}
         {...props}
       >
@@ -154,20 +177,22 @@ export const MobileSidebar = ({
   );
 };
 
+interface SidebarLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  link: Links;
+  className?: string;
+}
+
 export const SidebarLink = ({
   link,
   className,
   ...props
-}: {
-  link: Links;
-  className?: string;
-}) => {
+}: SidebarLinkProps) => {
   const { open, animate } = useSidebar();
   return (
     <a
       href={link.href}
       className={cn(
-        "flex items-center justify-start gap-2  group/sidebar py-2",
+        "flex items-center justify-start gap-2 group/sidebar py-2",
         className
       )}
       {...props}
@@ -186,6 +211,5 @@ export const SidebarLink = ({
     </a>
   );
 };
-
 
 export default Sidebar;
